@@ -24,3 +24,12 @@ Route::get('logout','Auth\LoginController@logout');
 
 Route::get('login','Auth\LoginController@Show');
 Route::post('login','Auth\LoginController@login');
+
+Route::group(['prefix' => 'admin','namespace'=>'admin','middleware'=>'auth'],function()
+{
+
+    Route::get('dashboard','DashController@index');
+
+
+
+} );

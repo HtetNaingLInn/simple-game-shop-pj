@@ -18,8 +18,16 @@
                   <button class="btn btn-outline-success">Category</button>
               </a>
             </li>
+            @if ($user=Auth::User())
+            <li class="nav-item">
+              <a  class="nav-link" href="#">
+            <button class="btn btn-outline-success">{{$user->name}}</button>
+          </a>
+        </li>
+            @endif
             
             
+
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" aria-label="Search">
